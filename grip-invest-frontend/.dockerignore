@@ -1,0 +1,14 @@
+# Ignore local node_modules
+node_modules/
+
+# Ignore previous build/dist folder
+build/
+dist/
+
+# Ignore Docker ignore itself and git
+.dockerignore
+.git
+.gitignore
+
+# Ignore environment files
+.env

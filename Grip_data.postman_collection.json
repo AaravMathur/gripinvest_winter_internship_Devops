@@ -1,0 +1,370 @@
+{
+	"info": {
+		"_postman_id": "99870666-c49e-4c2e-a612-2a6a1ac5ae5a",
+		"name": "Grip_data",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48597273"
+	},
+	"item": [
+		{
+			"name": "User-Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"test@123gmail.com\",\r\n  \"password\": \"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign up",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"first_name\": \"Test\",\r\n  \"last_name\": \"User\",\r\n  \"email\": \"Testt@123gmail.com\",\r\n  \"password\": \"test\",\r\n  \"risk_appetite\": \"Moderate\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "health",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\":\"Test\",\r\n    \"last_name\":\"user\",\r\n    \"email\":\"Test@123gmail.com\",\r\n    \"password\":\"test\",\r\n    \"risk_appetite\":\"Moderate\"\r\n    \r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU3ZDQxMDVhLTkxMjAtMTFmMC1iNjY2LTUwODE0MDUxNmNlZiIsImVtYWlsIjoidGVzdEAxMjNnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc1ODI3MDgyNiwiZXhwIjoxNzU4MzU3MjI2fQ.mO5MMHDlEW7slGzZsg1mKoC2Wy7dMD5T64v9EwGXJkw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Investment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU3ZDQxMDVhLTkxMjAtMTFmMC1iNjY2LTUwODE0MDUxNmNlZiIsImVtYWlsIjoidGVzdEAxMjNnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc1ODI3MDgyNiwiZXhwIjoxNzU4MzU3MjI2fQ.mO5MMHDlEW7slGzZsg1mKoC2Wy7dMD5T64v9EwGXJkw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"product_id\": \"263f77e7-952d-11f0-b666-508140516cef\",\r\n  \"amount\": 5000\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/investments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"investments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dashboard",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU3ZDQxMDVhLTkxMjAtMTFmMC1iNjY2LTUwODE0MDUxNmNlZiIsImVtYWlsIjoidGVzdEAxMjNnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc1ODI3MDgyNiwiZXhwIjoxNzU4MzU3MjI2fQ.mO5MMHDlEW7slGzZsg1mKoC2Wy7dMD5T64v9EwGXJkw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/dashboard/portfolio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"dashboard",
+						"portfolio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transactions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU3ZDQxMDVhLTkxMjAtMTFmMC1iNjY2LTUwODE0MDUxNmNlZiIsImVtYWlsIjoidGVzdEAxMjNnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc1ODI3MDgyNiwiZXhwIjoxNzU4MzU3MjI2fQ.mO5MMHDlEW7slGzZsg1mKoC2Wy7dMD5T64v9EwGXJkw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin-Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"admin@grip.com\",\r\n  \"password\": \"admin\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add-product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImM5M2UwOTVhLTkyZDYtMTFmMC1iNjY2LTUwODE0MDUxNmNlZiIsImVtYWlsIjoiYWRtaW5AZ3JpcC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTgyNzQyODMsImV4cCI6MTc1ODM2MDY4M30.mi151-qt9XQGkQT7anm8z_oPuspjqrbYptFPQRH4hP0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"ETF Growth Fund\",\r\n  \"investment_type\": \"etf\",\r\n  \"tenure_months\": 18,\r\n  \"annual_yield\": 8.0,\r\n  \"risk_level\": \"moderate\",\r\n  \"min_investment\": 1000,\r\n  \"max_investment\": 50000,\r\n  \"description\": \"AI-generated growth fund description\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-product",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImM5M2UwOTVhLTkyZDYtMTFmMC1iNjY2LTUwODE0MDUxNmNlZiIsImVtYWlsIjoiYWRtaW5AZ3JpcC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTgyNzQyODMsImV4cCI6MTc1ODM2MDY4M30.mi151-qt9XQGkQT7anm8z_oPuspjqrbYptFPQRH4hP0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Government Bond 2025\",\r\n        \"investment_type\": \"bond\",\r\n        \"tenure_months\": 24,\r\n        \"annual_yield\": \"7.50\",\r\n        \"risk_level\": \"low\",\r\n        \"min_investment\": \"50000.00\",\r\n        \"max_investment\": \"100000.00\",\r\n        \"description\": \"Secure government-backed bond with fixed returns.\",\r\n        \"created_at\": \"2025-09-19T07:49:19.000Z\",\r\n        \"updated_at\": \"2025-09-19T07:49:19.000Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/products/263f77e7-952d-11f0-b666-508140516cef",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"products",
+						"263f77e7-952d-11f0-b666-508140516cef"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete-product",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImM5M2UwOTVhLTkyZDYtMTFmMC1iNjY2LTUwODE0MDUxNmNlZiIsImVtYWlsIjoiYWRtaW5AZ3JpcC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTgyNzQyODMsImV4cCI6MTc1ODM2MDY4M30.mi151-qt9XQGkQT7anm8z_oPuspjqrbYptFPQRH4hP0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/products/263f77e7-952d-11f0-b666-508140516cef",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"products",
+						"263f77e7-952d-11f0-b666-508140516cef"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

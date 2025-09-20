@@ -1,0 +1,46 @@
+version: '3.9'
+
+services:
+  mysql_db:
+    image: mysql:8.0
+    container_name: grip_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: GRIP_data
+    volumes:
+      - grip_mysql_data:/var/lib/mysql       # unique volume name
+      - ./mysql_init:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-uroot", "-proot"]
+      interval: 10s
+      retries: 5
+
+  backend:
+    build: ./grip-invest-frontend/investment-backend
+    container_name: grip_backend
+    ports:
+      - "5000:5000"
+    environment:
+      DB_HOST: mysql_db
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: root
+      DB_NAME: GRIP_data
+      JWT_SECRET: your_jwt_secret_key
+      ADMINS: admin@grip.com
+    depends_on:
+      - mysql_db
+
+  frontend:
+    build: ./grip-invest-frontend
+    container_name: grip_frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  grip_mysql_data:
